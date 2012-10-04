@@ -309,16 +309,20 @@ function setDayID(cell, date) {
 
 
 function getSkinCss(event, opt) {
-
+        //TODO: Make order of resource and source overrides customizable
 	var source = event.source || {};
+	var resource = event.resource || {};
 	var eventColor = event.color;
 	var sourceColor = source.color;
+	var resourceColor = resource.color;
 	var optionColor = opt('eventColor');
 	var backgroundColor =
 		event.backgroundColor ||
 		eventColor ||
 		source.backgroundColor ||
 		sourceColor ||
+		resource.backgroundColor ||
+		resourceColor ||
 		opt('eventBackgroundColor') ||
 		optionColor;
 	var borderColor =
@@ -326,11 +330,14 @@ function getSkinCss(event, opt) {
 		eventColor ||
 		source.borderColor ||
 		sourceColor ||
+		resource.borderColor ||
+		resourceColor ||
 		opt('eventBorderColor') ||
 		optionColor;
 	var textColor =
 		event.textColor ||
 		source.textColor ||
+		resource.textColor ||
 		opt('eventTextColor');
 	var statements = [];
 	if (backgroundColor) {

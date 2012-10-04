@@ -278,11 +278,7 @@ function AgendaEventRenderer() {
 		var url = event.url;
 		
 		var skinCss = $('');
-		if(event.resource) {		
-			skinCss = getSkinCssWithResource(event, event.resource); // PA TODO - merge getSkinCssWithResource into getSkinCss
-		} else {
-			skinCss = getSkinCss(event, opt);
-		}
+		skinCss = getSkinCss(event, opt);
 		
 		var skinCssAttr = (skinCss ? " style='" + skinCss + "'" : '');
 		var classes = ['fc-event', 'fc-event-skin', 'fc-event-vert'];

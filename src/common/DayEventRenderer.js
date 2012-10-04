@@ -185,12 +185,7 @@ function DayEventRenderer() {
 				classes = classes.concat(event.source.className || []);
 			}
 			url = event.url;
-			if(event.resource) {		
-				skinCss = getSkinCssWithResource(event, event.resource); // PA TODO - merge getSkinCssWithResource into getSkinCss
-			}
-			else {
-				skinCss = getSkinCss(event, opt);
-			}
+			skinCss = getSkinCss(event, opt);
 			
 			if (url) {
 				html += "<a href='" + htmlEscape(url) + "'";
